@@ -2,7 +2,9 @@
 Plataforma de Gestión de Proyectos de Investigación
 
 Integrantes:
-Juan Esteban Osorio Lopera - 
+
+Juan Esteban Osorio Lopera
+
 Juan Fernando Galeano Ruiz
 
 Entidades:
