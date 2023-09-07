@@ -9,6 +9,7 @@ namespace ProjectManagement.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
+
         public DbSet<InvestigationProject> InvestigationProjects { get; set; }
 
         //investigator
