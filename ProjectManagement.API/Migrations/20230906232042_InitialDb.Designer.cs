@@ -11,7 +11,7 @@ using ProjectManagement.API.Data;
 namespace ProjectManagement.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230906043840_InitialDb")]
+    [Migration("20230906232042_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -63,6 +63,42 @@ namespace ProjectManagement.API.Migrations
                         .IsUnique();
 
                     b.ToTable("InvestigationProjects");
+                });
+
+            modelBuilder.Entity("ProjectManagement.Shared.Entities.Investigator", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("InstitutionalAffiliation")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NameInvestigador")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Specialization")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NameInvestigador")
+                        .IsUnique();
+
+                    b.ToTable("Investigators");
                 });
 #pragma warning restore 612, 618
         }
