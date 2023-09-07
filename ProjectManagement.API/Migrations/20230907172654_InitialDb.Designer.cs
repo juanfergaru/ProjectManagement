@@ -11,7 +11,7 @@ using ProjectManagement.API.Data;
 namespace ProjectManagement.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230906043840_InitialDb")]
+    [Migration("20230907172654_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
