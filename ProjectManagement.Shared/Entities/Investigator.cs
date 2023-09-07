@@ -20,21 +20,21 @@ namespace ProjectManagement.Shared.Entities
 
         // Afiliación Institucional
         [Display(Name = "Afiliación Institucional")]
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        [MaxLength(100, ErrorMessage = "El campo {1} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "Debe proporcionar una afiliación institucional.")]
         public string InstitutionalAffiliation { get; set; } = null!;
 
 
         // especializacion
         [Display(Name = "Especializacion")]
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        [MaxLength(100, ErrorMessage = "El campo {2} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "Debe proporcionar una especialización.")]
         public string Specialization { get; set; } = null!;
 
 
         // Rol
         [Display(Name = "Rol")]
-        [MaxLength(100, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        [MaxLength(100, ErrorMessage = "El campo {3} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "Debe proporcionar un rol.")]
         public string Rol { get; set; } = null!;
     }
