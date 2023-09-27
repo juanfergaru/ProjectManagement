@@ -34,11 +34,25 @@ namespace ProjectManagement.API.Controllers
         public async Task<ActionResult> Get(int id)
         {
             var investigator = await _dataContext.Investigators.FirstOrDefaultAsync(X => X.Id == id);
-            if (investigator==null)
-            {
-                return NotFound();
-            }
+            return investigator == null ? NotFound() : Ok(investigator);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Put(Investigator investigator)
+        {
+            _dataContext.Update(investigator);
+            await _dataContext.SaveChangesAsync();
             return Ok(investigator);
         }
+
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var filaafectada=await _dataContext.Investigators
+                .Where(x=>x.Id==id).ExecuteDeleteAsync ();
+            return filaafectada == 0 ? NotFound() : NoContent();   
+        }
+
     }
 }
