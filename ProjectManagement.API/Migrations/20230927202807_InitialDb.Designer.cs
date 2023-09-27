@@ -11,8 +11,8 @@ using ProjectManagement.API.Data;
 namespace ProjectManagement.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230907184212_InitialBD")]
-    partial class InitialBD
+    [Migration("20230927202807_InitialDb")]
+    partial class InitialDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace ProjectManagement.API.Migrations
 
                     b.Property<string>("Area")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -44,8 +44,8 @@ namespace ProjectManagement.API.Migrations
 
                     b.Property<string>("EndDate")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("NameProject")
                         .IsRequired()
@@ -54,8 +54,8 @@ namespace ProjectManagement.API.Migrations
 
                     b.Property<string>("StartDate")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
